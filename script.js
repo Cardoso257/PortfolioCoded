@@ -56,3 +56,18 @@ if (formContato) {
     }, 2000);
   });
 }
+
+// ---------- EFEITO DE LUZ SEGUINDO O MOUSE ----------
+const glow = document.createElement('div');
+glow.classList.add('glow');
+document.body.appendChild(glow);
+
+document.addEventListener('mousemove', (e) => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+// Opcional: esconder o brilho em telas pequenas (celular)
+if (window.innerWidth < 768) {
+  glow.style.display = 'none';
+}
