@@ -1,0 +1,305 @@
+:root {
+    --cor-fundo1: #f88b8b;
+    --cor-fundo2: #eb0c0c;
+    --cor-texto: black;
+}
+
+.claro {
+    --cor-fundo1: #ff4d4d;
+    --cor-fundo2: #8b0000;
+    --cor-texto: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--cor-fundo1), var(--cor-fundo2));
+    color: var(--cor-texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+header h2 {
+    font-weight: 700;
+}
+
+header nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ffd54f;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 700;
+    margin: 1rem 0 0.5rem;
+}
+
+p,
+li {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+ul {
+    list-style: disc;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    max-width: 700px;
+    text-align: left;
+}
+
+#modo-btn {
+    background-image: url(ldbtn.png);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 43%;
+}
+
+.ldbtn {
+    width: 40px;
+}
+
+/* ---------- PÁGINA DE CONTATO ---------- */
+.btn-contato {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid var(--cor-texto);
+    color: var(--cor-texto);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.btn-contato:hover {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo1);
+}
+
+/* ---------- MODAL ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-conteudo {
+    background: var(--cor-fundo1);
+    color: var(--cor-texto);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.modal-conteudo h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.modal-conteudo label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.modal-conteudo input,
+.modal-conteudo textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-top: 0.3rem;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-conteudo textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+.btn-enviar {
+    margin-top: 1.2rem;
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    background: var(--cor-texto);
+    color: var(--cor-fundo1);
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover {
+    opacity: 0.8;
+}
+
+.fechar {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--cor-texto);
+}
+
+.msg-enviada {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* ---------- RESPONSIVIDADE GERAL ---------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    header h2 {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    #modo-btn {
+        margin-left: 0;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+    }
+
+    section p {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+
+    .btn-contato {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* ---------- MODAL RESPONSIVO ---------- */
+@media (max-width: 480px) {
+    .modal-conteudo {
+        width: 90%;
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    .modal-conteudo h2 {
+        font-size: 1.2rem;
+    }
+
+    .modal-conteudo label {
+        font-size: 0.9rem;
+    }
+
+    .modal-conteudo input,
+    .modal-conteudo textarea {
+        font-size: 0.9rem;
+    }
+
+    .btn-enviar {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .fechar {
+        font-size: 1.2rem;
+    }
+}
+
+/* ---------- TELA MUITO PEQUENA (CELULARES ANTIGOS) ---------- */
+@media (max-width: 360px) {
+    header h2 {
+        font-size: 0.95rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .btn-contato {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+}
