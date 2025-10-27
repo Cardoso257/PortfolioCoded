@@ -302,4 +302,25 @@ ul {
         font-size: 1rem;
         padding: 0.8rem 1rem;
     }
+
+}
+
+/* ---------- EFEITO DE BRILHO SEGUINDO O MOUSE ---------- */
+.glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+  mix-blend-mode: overlay;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transition: background 0.3s;
+}
+
+.claro .glow {
+  background: radial-gradient(circle, rgba(255,255,255,0.6), transparent 70%);
 }
